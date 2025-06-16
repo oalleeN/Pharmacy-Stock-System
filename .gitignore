@@ -31,3 +31,81 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+**/logs/
+**/*.log
+**/*.tmp
+
+# Build output
+*.class
+*.jar
+*.war
+*.ear
+
+# Generated files
+hs_err_pid*
+rebel.xml
+dump.rdb
+
+# Spring Boot specific
+spring.log
+
+# Local databases
+*.db
+*.sqlite
+*.mv.db
+*.h2.db
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.c9/
+.settings/
+bin/
+tmp/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs and cache
+logs/
+*.log
+.cache/
+*.swp
+
+# Environment files
+.env
+.env.*
+
+# Backup and temporary files
+*.bak
+*.tmp
+*.orig
+
+# Test reports
+test-output/
+
+# Build directories
+build/
+
+# Maven Wrapper
+.mvn/
+mvnw
+mvnw.cmd
