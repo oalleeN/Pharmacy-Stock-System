@@ -17,12 +17,12 @@ public class MedicamentController {
         this.service = service;
     }
 
-    @GetMapping
+    @GetMapping("/listAll")
     public List<Medicament> listAll(){
         return service.listAll();
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Medicament create(@RequestBody Medicament medicament) {
         return service.save(medicament);
     }
