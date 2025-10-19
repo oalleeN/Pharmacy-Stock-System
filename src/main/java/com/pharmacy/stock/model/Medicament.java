@@ -1,7 +1,10 @@
 package com.pharmacy.stock.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "medicaments")
@@ -11,17 +14,18 @@ public class Medicament {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "code", nullable = false, unique = true)
     private String code;
 
-    @Column(nullable = false)
+    @Column(name = "quantity", nullable = false)
     private Integer quantity;
 
-    @Column(nullable = false)
-    private String validity;
+    @Column(name = "validity", nullable = false, columnDefinition = "TEXT")
+    @JsonFormat(pattern = ("dd/MM/yyyy"))
+    private LocalDate validity;
 
     public Long getId() {
         return id;
@@ -55,11 +59,11 @@ public class Medicament {
         this.quantity = quantity;
     }
 
-    public String getValidity() {
+    public LocalDate getValidity() {
         return validity;
     }
 
-    public void setValidity(String validity) {
+    public void setValidity(LocalDate validity) {
         this.validity = validity;
     }
 }
