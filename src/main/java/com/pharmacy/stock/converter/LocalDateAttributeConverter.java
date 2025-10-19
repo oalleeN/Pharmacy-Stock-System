@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Converter(autoApply = true)
-public class LcoalDateAttributeConverter implements AttributeConverter<LocalDate, String> {
+public class LocalDateAttributeConverter implements AttributeConverter<LocalDate, String> {
 
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_LOCAL_DATE;
 
