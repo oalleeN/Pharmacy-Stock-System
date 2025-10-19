@@ -2,6 +2,7 @@ package com.pharmacy.stock.model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.pharmacy.stock.enums.MedicamentTypesEnum;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -26,6 +27,10 @@ public class Medicament {
     @Column(name = "validity", nullable = false, columnDefinition = "TEXT")
     @JsonFormat(pattern = ("dd/MM/yyyy"))
     private LocalDate validity;
+
+    @Column(name = "type", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private MedicamentTypesEnum type;
 
     public Long getId() {
         return id;
@@ -65,5 +70,13 @@ public class Medicament {
 
     public void setValidity(LocalDate validity) {
         this.validity = validity;
+    }
+
+    public MedicamentTypesEnum getType() {
+        return type;
+    }
+
+    public void setType(MedicamentTypesEnum type) {
+        this.type = type;
     }
 }
