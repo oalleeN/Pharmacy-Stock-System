@@ -32,6 +32,17 @@ public class Medicament {
     @Enumerated(EnumType.STRING)
     private MedicamentTypesEnum type;
 
+    protected Medicament() {
+    }
+
+    public Medicament(String name, String code, Integer quantity, LocalDate validity, MedicamentTypesEnum type) {
+        this.name = name;
+        this.code = code;
+        this.quantity = quantity;
+        this.validity = validity;
+        this.type = type;
+    }
+
     public Long getId() {
         return id;
     }
